@@ -19,11 +19,22 @@ public class DataEntity {
 		Hero, Voldemort, Entchen, Link, Zelda
 	}
 
+	public static EntityE stringToEntity(String s) {
+		EntityE e = null;
+		EntityE[] entitys = EntityE.values();
+		int max = entitys.length;
+		for (int i = 0; i < max; i++) {
+			if (entitys[i].name().equals(s)) {
+				e = entitys[i];
+			}
+		}
+		return e;
+	}
+
 	public static int getHP(EntityE e) {
 		int hp = 0;
 		JSONParser parser = new JSONParser();
-		InputStream in = DataEntity.class
-				.getResourceAsStream("/org/rpg/entitys/" + e.name() + ".json");
+		InputStream in = DataEntity.class.getResourceAsStream("/org/rpg/entitys/" + e.name() + ".json");
 		try {
 			Object obj = parser.parse(new InputStreamReader(in));
 			JSONObject jsonObj = (JSONObject) obj;
@@ -39,8 +50,7 @@ public class DataEntity {
 	public static int getAttack(EntityE e) {
 		int attack = 0;
 		JSONParser parser = new JSONParser();
-		InputStream in = DataEntity.class
-				.getResourceAsStream("/org/rpg/entitys/" + e.name() + ".json");
+		InputStream in = DataEntity.class.getResourceAsStream("/org/rpg/entitys/" + e.name() + ".json");
 		try {
 			Object obj = parser.parse(new InputStreamReader(in));
 			JSONObject jsonObj = (JSONObject) obj;
@@ -55,8 +65,7 @@ public class DataEntity {
 	public static int getDef(EntityE e) {
 		int def = 0;
 		JSONParser parser = new JSONParser();
-		InputStream in = DataEntity.class.getResourceAsStream("" + e.name()
-				+ ".json");
+		InputStream in = DataEntity.class.getResourceAsStream("" + e.name() + ".json");
 		try {
 			Object obj = parser.parse(new InputStreamReader(in));
 			JSONObject jsonObj = (JSONObject) obj;
@@ -71,8 +80,7 @@ public class DataEntity {
 	public static int getInit(EntityE e) {
 		int init = 0;
 		JSONParser parser = new JSONParser();
-		InputStream in = DataEntity.class.getResourceAsStream("" + e.name()
-				+ ".json");
+		InputStream in = DataEntity.class.getResourceAsStream("" + e.name() + ".json");
 		try {
 			Object obj = parser.parse(new InputStreamReader(in));
 			JSONObject jsonObj = (JSONObject) obj;
@@ -87,8 +95,7 @@ public class DataEntity {
 	public static TypesE getType(EntityE e) {
 		TypesE type = null;
 		JSONParser parser = new JSONParser();
-		InputStream in = DataEntity.class.getResourceAsStream("" + e.name()
-				+ ".json");
+		InputStream in = DataEntity.class.getResourceAsStream("" + e.name() + ".json");
 		try {
 			Object obj = parser.parse(new InputStreamReader(in));
 			JSONObject jsonObj = (JSONObject) obj;
@@ -103,8 +110,7 @@ public class DataEntity {
 	public static int getMP(EntityE e) {
 		int mp = 0;
 		JSONParser parser = new JSONParser();
-		InputStream in = DataEntity.class.getResourceAsStream("" + e.name()
-				+ ".json");
+		InputStream in = DataEntity.class.getResourceAsStream("" + e.name() + ".json");
 		try {
 			Object obj = parser.parse(new InputStreamReader(in));
 			JSONObject jsonObj = (JSONObject) obj;
@@ -119,8 +125,7 @@ public class DataEntity {
 	public static int getXP(EntityE e) {
 		int xp = 0;
 		JSONParser parser = new JSONParser();
-		InputStream in = DataEntity.class.getResourceAsStream("" + e.name()
-				+ ".json");
+		InputStream in = DataEntity.class.getResourceAsStream("" + e.name() + ".json");
 		try {
 			Object obj = parser.parse(new InputStreamReader(in));
 			JSONObject jsonObj = (JSONObject) obj;

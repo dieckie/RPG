@@ -136,16 +136,7 @@ public class DataEntity {
 		}
 		return xp;
 	}
-
-	// TODO
-	// TODO
-	// TODO HIER WIRD SICH EIN FEHLER BEFINDEN.
-	// TODO NOCHMAL GENAU GUCKEN, WIE DAS SO GENAU
-	// TODO MIT DEN SIMPLE JSON ARRAYS GEHT.
-	// TODO
-	// TODO Innerhalb eines Arrays ein neues noch eines neues Objekt erstellen?
-	// TODO
-	// TODO
+	
 	public static AttackE[] getAttacks(EntityE e) {
 		JSONParser parser = new JSONParser();
 		InputStream in = DataEntity.class.getResourceAsStream("/org/rpg/entitys/" + e.name() + ".json");

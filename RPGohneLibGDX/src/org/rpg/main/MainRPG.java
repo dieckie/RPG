@@ -1,8 +1,10 @@
 package org.rpg.main;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.file.Files;
 
 import org.rpg.attacks.DataAttacks.AttackE;
 import org.rpg.entitys.DataEntity;
@@ -10,7 +12,10 @@ import org.rpg.entitys.DataEntity.EntityE;
 
 public class MainRPG {
 	public static void main(String[] args) throws ClassNotFoundException {
-
+		
+		File file = new File(System.getProperty("user.home") + "/.rpg/Entitys");
+		file.mkdirs();
+		
 		EntityE good = EntityE.Entchen;
 		EntityE bad = EntityE.Hero;
 		EntityE winner = null;

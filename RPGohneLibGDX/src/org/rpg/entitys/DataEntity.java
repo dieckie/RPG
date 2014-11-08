@@ -8,6 +8,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.rpg.attacks.DataAttacks;
 import org.rpg.attacks.DataAttacks.AttackE;
 import org.rpg.types.DataTypes;
 import org.rpg.types.DataTypes.TypesE;
@@ -150,7 +151,8 @@ public class DataEntity {
 			JSONArray jsonArr = (JSONArray) jsonObj.get("attacks");
 			attacks = new AttackE[jsonArr.size()];
 			for (int i = 0; i < jsonArr.size(); i++) {
-				attacks[i] = (AttackE) jsonArr.get(i);
+				String s = (String) jsonArr.get(i);
+				attacks[i] = DataAttacks.stringToAttack(s);
 			}
 		} catch (IOException | ParseException e1) {
 			e1.printStackTrace();

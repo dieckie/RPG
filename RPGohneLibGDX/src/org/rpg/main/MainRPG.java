@@ -62,11 +62,9 @@ public class MainRPG {
 					case 1:
 						Attackg = attacksg[0];
 						break;
-
 					case 2:
 						Attackg = attacksg[1];
 						break;
-
 					case 3:
 						Attackg = attacksg[2];
 						break;
@@ -133,7 +131,7 @@ public class MainRPG {
 
 					break;
 				case 4:
-
+					
 					break;
 				default:
 					System.out.println("Kannst du nicht bis 4 zählen");

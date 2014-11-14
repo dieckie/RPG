@@ -48,7 +48,8 @@ public class ReadEntity {
 		try {
 			Object obj = parser.parse(new FileReader(file));
 			JSONObject jsonObject = (JSONObject) obj;
-			HP = (Integer) jsonObject.get("HP");
+			long HPL = (long) jsonObject.get("HP");
+			HP = (int) HPL;
 		} catch (IOException | ParseException e) {
 		}
 		return HP;
@@ -74,7 +75,7 @@ public class ReadEntity {
 		try {
 			Object obj = parser.parse(new FileReader(file));
 			JSONObject jsonObject = (JSONObject) obj;
-			String s = (String) jsonObject.get("Type");
+			String s = (String) jsonObject.get("Entity");
 			Entity = DataEntity.stringToEntity(s);
 		} catch (IOException | ParseException e) {
 		}
@@ -132,6 +133,19 @@ public class ReadEntity {
 		}
 		return Def;
 	}
+	
+	public static int readInit(String name) {
+		File file = new File(System.getProperty("user.home") + "/.rpg/Entitys/" + name + ".json");
+		JSONParser parser = new JSONParser();
+		int Init = 0;
+		try {
+			Object obj = parser.parse(new FileReader(file));
+			JSONObject jsonObject = (JSONObject) obj;
+			Init = (Integer) jsonObject.get("Init");
+		} catch (IOException | ParseException e) {
+		}
+		return Init;
+	}
 
 	public static AttackE[] readAttacks(String name) {
 		File file = new File(System.getProperty("user.home") + "/.rpg/Entitys/" + name + ".json");
@@ -140,7 +154,7 @@ public class ReadEntity {
 		try {
 			Object obj = parser.parse(new FileReader(file));
 			JSONObject jsonObject = (JSONObject) obj;
-			JSONArray jsonArr = (JSONArray) jsonObject.get("attacks");
+			JSONArray jsonArr = (JSONArray) jsonObject.get("Attacks");
 			attacks = new AttackE[jsonArr.size()];
 			for (int i = 0; i < jsonArr.size(); i++) {
 				String s = (String) jsonArr.get(i);

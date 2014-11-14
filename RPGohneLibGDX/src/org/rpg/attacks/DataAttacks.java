@@ -82,7 +82,7 @@ public class DataAttacks {
 		try {
 			Object obj = parser.parse(new InputStreamReader(in));
 			JSONObject jsonObj = (JSONObject) obj;
-			long accl = (long) jsonObj.get("hp");
+			long accl = (long) jsonObj.get("acc");
 			acc = (int) accl;
 		} catch (IOException | ParseException e1) {
 			e1.printStackTrace();

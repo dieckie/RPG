@@ -1,6 +1,6 @@
 {
 	"name": "Stubser",
-	"attack": 10,
+	"attack": 100,
 	"type": "TYPE",
 	"acc": 90,
 	"special": false,
